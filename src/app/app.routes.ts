@@ -3,7 +3,7 @@ import { DefaultLayoutComponent } from './home/default-layout/default-layout/def
 import { HomeIndexComponent } from './home/home-index/home-index/home-index.component';
 import { AuthenticationComponent } from './home/authentication/authentication/authentication.component';
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout/dashboard-layout.component';
-import { AdminHomeComponent } from './dashboard/dashboard-pages/admin-home/admin-home.component';
+import { AdminHomeComponent } from './dashboard/dashboard-pages/admin-home/admin-home/admin-home.component';
 import { authGuard } from './shared/guards/auth.guard';
 
 export const routes: Routes = [
@@ -21,7 +21,6 @@ export const routes: Routes = [
             path: 'auth',
             component:AuthenticationComponent ,
           }
-         
         ]
       },
       {
