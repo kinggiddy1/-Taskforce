@@ -21,7 +21,6 @@ export class AdminHomeComponent implements OnInit{
       ngOnInit(): void {
         this.transService.getBalance().subscribe({
           next: (data) => {
-            console.log(data);
             this.balance = data['Balance'];
           },
           error: (error) => {

@@ -5,6 +5,7 @@ import { AuthenticationComponent } from './home/authentication/authentication/au
 import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard-layout/dashboard-layout.component';
 import { AdminHomeComponent } from './dashboard/dashboard-pages/admin-home/admin-home/admin-home.component';
 import { authGuard } from './shared/guards/auth.guard';
+import { TransactionsComponent } from './dashboard/dashboard-pages/transactions/transactions.component';
 
 export const routes: Routes = [
 
@@ -30,6 +31,12 @@ export const routes: Routes = [
           {
             path: 'dashboard',
             component: AdminHomeComponent,
+            canActivate: [authGuard],
+            data: { roles: ['Admin'] },
+          },
+          {
+            path: 'transactions',
+            component: TransactionsComponent,
             canActivate: [authGuard],
             data: { roles: ['Admin'] },
           },

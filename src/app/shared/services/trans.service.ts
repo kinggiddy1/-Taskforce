@@ -21,6 +21,11 @@ export class TransService {
       return this.http.post<any>(this.apiUrl+'balance/', {});
     }
 
+      //get Transactions
+    getTransactions(): Observable<any> {
+        return this.http.get<any>(this.apiUrl+'transactions/', {});
+    }
+
     
     
 }
