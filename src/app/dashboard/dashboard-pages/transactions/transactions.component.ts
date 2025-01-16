@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { TransService } from '../../../shared/services/trans.service';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+//DATA TABLE
+
 
 @Component({
   selector: 'app-transactions',

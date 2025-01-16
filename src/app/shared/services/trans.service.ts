@@ -26,6 +26,20 @@ export class TransService {
       return this.http.get<any>(this.apiUrl+'transactions/', {});
     }
 
-    
+       //get bank
+    getBank(): Observable<any> {
+      return this.http.post<any>(this.apiUrl+'bank/', {});
+    }
+
+      //get bank
+    getCash(): Observable<any> {
+    return this.http.post<any>(this.apiUrl+'cash/', {});
+    }
+
+    //get bank
+    getMoMo(): Observable<any> {
+      return this.http.post<any>(this.apiUrl+'momo/', {});
+    }
+  
     
 }
