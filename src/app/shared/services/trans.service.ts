@@ -23,7 +23,7 @@ export class TransService {
 
       //get Transactions
     getTransactions(): Observable<any> {
-        return this.http.get<any>(this.apiUrl+'transactions/', {});
+      return this.http.get<any>(this.apiUrl+'transactions/', {});
     }
 
     
