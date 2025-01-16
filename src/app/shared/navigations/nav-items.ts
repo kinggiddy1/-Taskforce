@@ -2,8 +2,8 @@ export const NAV_ITEMS: Record<string, Array<{ label: string; link: string; icon
     Admin: [
       { label: 'Dashboard', link: '/dashboard', icon: 'house-check-fill' },
       { label: 'Transactions', link: '/transactions', icon: 'list-ol' },
-      { label: 'Orders', link: '/bank', icon: 'people' },
+      { label: 'Orders', link: '/orders', icon: 'people' },
     ],
-    
+ 
   };
   
