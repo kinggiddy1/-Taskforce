@@ -11,7 +11,7 @@ import { RouterModule } from '@angular/router'; //to use routerLink Active
   imports: [CommonModule, RouterModule, RouterLink,BsDropdownModule],
   templateUrl: './dashboard-sidebar.component.html',
   styleUrl: './dashboard-sidebar.component.css'
-})
+}) 
 
   export class DashboardSidebarComponent implements OnInit{
 

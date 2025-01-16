@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../environments/environments';
+import { environment } from '../environments/environments'; 
 import { Observable } from 'rxjs';
 import { TOKEN_KEY } from '../constants/constants';
 import { Router } from '@angular/router';
@@ -68,5 +68,11 @@ export class AuthService {
     userLists(): Observable<any> {
       return this.http.post<any>(this.apiUrl + 'userlist/', {});
     }
+
+      //get balance
+      getBalance(): Observable<any> {
+        return this.http.post<any>(this.apiUrl+'balance/', {});
+      }
+  
     
 }
