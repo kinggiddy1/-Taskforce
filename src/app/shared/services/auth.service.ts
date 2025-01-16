@@ -68,11 +68,5 @@ export class AuthService {
     userLists(): Observable<any> {
       return this.http.post<any>(this.apiUrl + 'userlist/', {});
     }
-
-      //get balance
-      getBalance(): Observable<any> {
-        return this.http.post<any>(this.apiUrl+'balance/', {});
-      }
-  
     
 }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../../../shared/services/auth.service';
 import { Router } from '@angular/router';
+import { TransService } from '../../../../shared/services/trans.service';
 
 
 @Component({
@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
 })
 export class AdminHomeComponent implements OnInit{
 
-    balance: any | null = null;
+    balance: any ;
 
-    constructor(private authService: AuthService, 
+    constructor(private transService: TransService, 
       private router: Router){}
     
   
       ngOnInit(): void {
-        this.authService.getBalance().subscribe({
+        this.transService.getBalance().subscribe({
           next: (data) => {
             console.log(data);
             this.balance = data['Balance'];

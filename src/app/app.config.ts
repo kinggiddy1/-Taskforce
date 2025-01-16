@@ -5,6 +5,7 @@ import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { loadingInterceptor } from './shared/interceptors/loading.interceptor';
+import { authInterceptor } from './shared/interceptors/auth.interceptor';
 
 
 
@@ -18,7 +19,7 @@ export const appConfig: ApplicationConfig = {
 
   
     //spinners
-    provideHttpClient(withInterceptors([loadingInterceptor])),
+    provideHttpClient(withInterceptors([loadingInterceptor, authInterceptor])),
     importProvidersFrom([BrowserAnimationsModule])
  
   ]
