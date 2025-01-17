@@ -22,7 +22,18 @@
                             [formControl]="orderForm.controls['account']"
                             [placeholder]="'Enter your account'"
                             [type]="'text'"
-                            ></app-text-input>             
+                            ></app-text-input>
+
+                            <app-text-input
+                            [label]="'money'"
+                            [formControl]="orderForm.controls['account']"
+                            [placeholder]="'Select your account'"
+                            [type]="'select'"
+                            [options]="['Option 1', 'Option 2', 'Option 3']">
+                        </app-text-input>
+
+                             
+                            
                 
                             <button type="submit" (click)="newOrderForm()" class="btn btn-outline-primary" [disabled]="this.orderForm.invalid" >Order Now</button>
                 

@@ -15,6 +15,7 @@ export class TextInputComponent {
     @Input() label ='';
     @Input() placeholder ='';
     @Input() autocomplete: string = 'off';
+    @Input() options: string[] = [];
 
     constructor(@Self() public controlDir: NgControl){
 
