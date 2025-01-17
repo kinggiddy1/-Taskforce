@@ -6,6 +6,7 @@ import { DashboardLayoutComponent } from './dashboard/dashboard-layout/dashboard
 import { AdminHomeComponent } from './dashboard/dashboard-pages/admin-home/admin-home/admin-home.component';
 import { authGuard } from './shared/guards/auth.guard';
 import { TransactionsComponent } from './dashboard/dashboard-pages/transactions/transactions.component';
+import { OrdersComponent } from './dashboard/dashboard-pages/orders/orders/orders.component';
 
 export const routes: Routes = [
 
@@ -37,6 +38,12 @@ export const routes: Routes = [
           {
             path: 'transactions',
             component: TransactionsComponent,
+            canActivate: [authGuard],
+            data: { roles: ['Admin'] },
+          },
+          {
+            path: 'orders',
+            component: OrdersComponent,
             canActivate: [authGuard],
             data: { roles: ['Admin'] },
           },
