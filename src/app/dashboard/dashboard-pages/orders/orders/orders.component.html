@@ -24,6 +24,21 @@
                             [type]="'select'"
                             [options]="['Bank', 'Cash', 'MoMo']">
                             </app-text-input>
+
+                            <app-text-input
+                            [label]="'Category'"
+                            [formControl]="orderForm.controls['category']"
+                            [placeholder]="'Select Category'"
+                            [type]="'select'"
+                            [options]="['Mortigage', 'Utilities', 'Insurance', 'Food & Groceries', 'Transportation', 'Entertainment']">
+                            </app-text-input>
+
+                            <app-text-input
+                            [label]="'Description'"
+                            [formControl]="orderForm.controls['description']"
+                            [placeholder]="'Enter Descriptions'"
+                            [type]="'text'"
+                            ></app-text-input>   
                 
                         <button type="submit" (click)="newOrderForm()" class="btn btn-outline-primary" [disabled]="this.orderForm.invalid" >Order Now</button>
                                            

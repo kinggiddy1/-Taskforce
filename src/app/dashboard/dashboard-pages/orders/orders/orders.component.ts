@@ -21,6 +21,8 @@ export class OrdersComponent {
   orderForm = this.fb.group({
     debit: ['', [Validators.required]],
     account: ['', [Validators.required]],
+    category: ['', [Validators.required]],
+    description: ['',[]],
   });
 
 
@@ -28,9 +30,8 @@ export class OrdersComponent {
     console.log('Form Data:', this.orderForm.value);
     this.transService.postOrder(this.orderForm.value).subscribe({
       next: (response) => {
-        console.log(response)
         if (response) {
-       
+          this.router.navigateByUrl('/transactions');
         } else {
           console.warn('Token is missing in response');
         }
