@@ -15,29 +15,18 @@
                             [formControl]="orderForm.controls['debit']"
                             [placeholder]="'Enter Amount'"
                             [type]="'number'"
-                            ></app-text-input>
-                
-                            <app-text-input
-                            [label]="'account'"
-                            [formControl]="orderForm.controls['account']"
-                            [placeholder]="'Enter your account'"
-                            [type]="'text'"
-                            ></app-text-input>
+                            ></app-text-input>               
 
                             <app-text-input
-                            [label]="'money'"
+                            [label]="'Account'"
                             [formControl]="orderForm.controls['account']"
-                            [placeholder]="'Select your account'"
+                            [placeholder]="'Select an account'"
                             [type]="'select'"
-                            [options]="['Option 1', 'Option 2', 'Option 3']">
+                            [options]="['Bank', 'Cash', 'MoMo']">
                         </app-text-input>
-
-                             
-                            
                 
-                            <button type="submit" (click)="newOrderForm()" class="btn btn-outline-primary" [disabled]="this.orderForm.invalid" >Order Now</button>
-                
-                            
+                        <button type="submit" (click)="newOrderForm()" class="btn btn-outline-primary" [disabled]="this.orderForm.invalid" >Order Now</button>
+                                           
                             </div>
                         </div>
                         </div>
