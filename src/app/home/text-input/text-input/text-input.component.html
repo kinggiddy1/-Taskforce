@@ -1,24 +1,25 @@
 <div class="form-floating mb-3">
-   <ng-container *ngIf="type === 'text'; else selectTemplate">
-       <input 
-       type="{{ type }}"
-       class="form-control touched" 
-       placeholder="{{ placeholder }}" 
-       [ngClass]="control.touched ? (control.invalid ? 'is-invalid' : 'is-valid') : null"
-       [formControl]="control"
-       [autocomplete]="autocomplete"
-       />
-   </ng-container>
-
-   <ng-template #selectTemplate>
-       <select 
+   
+   <ng-container *ngIf="type === 'select'; else selectTemplate">
+      <select 
        class="form-control touched" 
        [ngClass]="control.touched ? (control.invalid ? 'is-invalid' : 'is-valid') : null"
        [formControl]="control"
        >
            <option value="" disabled selected>{{ placeholder }}</option>
            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
-       </select>
+       </select> 
+   </ng-container>
+
+   <ng-template #selectTemplate>
+      <input 
+       type="{{ type }}"
+       class="form-control touched" 
+       placeholder="{{ placeholder }}" 
+       [ngClass]="control.touched ? (control.invalid ? 'is-invalid' : 'is-valid') : null"
+       [formControl]="control"
+       [autocomplete]="autocomplete"
+       /> 
    </ng-template>
 
    <label for="{{ label }}"><strong>{{ label }}</strong></label>
