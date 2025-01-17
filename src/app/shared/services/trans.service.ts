@@ -40,6 +40,12 @@ export class TransService {
     getMoMo(): Observable<any> {
       return this.http.post<any>(this.apiUrl+'momo/', {});
     }
+
+    //Make order
+    postOrder(data: any): Observable<any> { 
+      return this.http.post<any>(this.apiUrl+'debit/', data);
+    }
+  
   
     
 }
