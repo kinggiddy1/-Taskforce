@@ -22,7 +22,7 @@ export class OrdersComponent {
     debit: ['', [Validators.required]],
     account: ['', [Validators.required]],
     category: ['', [Validators.required]],
-    description: ['',[]],
+    description: ['', [Validators.required]],
   });
 
 
