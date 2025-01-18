@@ -25,8 +25,7 @@ export class IncomesComponent {
 
 
   newOrderForm() {
-    console.log('Form Data:', this.orderForm.value);
-    this.transService.postOrder(this.orderForm.value).subscribe({
+    this.transService.postIncome(this.orderForm.value).subscribe({
       next: (response) => {
         if (response) {
           this.router.navigateByUrl('/incomes');
