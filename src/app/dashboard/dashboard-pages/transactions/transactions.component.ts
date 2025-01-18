@@ -3,7 +3,6 @@ import { TransService } from '../../../shared/services/trans.service';
 import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
-import DataTables from 'datatables.net';
 import { Config } from 'datatables.net';
 
 
@@ -25,8 +24,10 @@ export class TransactionsComponent implements OnInit{
  
     ngOnInit(): void {
 
-         this.dtoptions = {
-      pagingType: 'full_numbers'
+      this.dtoptions = {
+      pagingType: 'full_numbers',
+      ordering: true, 
+       pageLength: 10,  
     };
       
       this.transService.getTransactions().subscribe({
