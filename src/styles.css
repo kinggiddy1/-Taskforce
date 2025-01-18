@@ -1,4 +1,2 @@
-body {
-    background-color: #d1d1d1;
-  }
   
+  @import '~datatables.net-dt/css/jquery.dataTables.min.css';

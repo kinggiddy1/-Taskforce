@@ -4,10 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
 import { Subject } from 'rxjs';
 import DataTables from 'datatables.net';
-
-
-
-
+import { Config } from 'datatables.net';
 
 
 @Component({
@@ -20,31 +17,19 @@ import DataTables from 'datatables.net';
 export class TransactionsComponent implements OnInit{
 
   transactions: any[] = []; 
-  dtOptions: DataTables.Settings = {};
+  // dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
  
 
   constructor(private transService: TransService){}
+  dtoptions:Config = {};
  
     ngOnInit(): void {
 
-      this.dtOptions = {
-        pagingType: 'full_numbers',
-        pageLength: 10,  
-        processing: true, 
-        columns: [
-          { title: '#', data: 'id' },
-          { title: 'Date', data: 'created_at' },
-          { title: 'Income', data: 'credit' },
-          { title: 'Expense', data: 'debit' },
-          { title: 'Account', data: 'account' },
-          { title: 'Category', data: 'category' },
-          { title: 'Descriptions', data: 'description' },
-          { title: 'Actions', data: null, defaultContent: '', orderable: false }
-        ] as DataTables.ColumnSettings[]
-      };
+         this.dtoptions = {
+      pagingType: 'full_numbers'
+    };
       
-
       this.transService.getTransactions().subscribe({
         next: (data) => {
           console.log(data);
