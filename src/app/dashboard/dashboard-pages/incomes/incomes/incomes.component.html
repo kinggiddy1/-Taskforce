@@ -1,1 +1,45 @@
-<p>incomes works!</p>
+<div class="card">
+    <div class="card-body">
+        
+        <section class="vh-100">
+                <form [formGroup]="orderForm">
+                    <div class="container">
+                    <div class="row d-flex justify-content-left ">
+                        <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+                        <div class="card shadow-2-strong" style="border-radius: 1rem; background-color:rgb(252, 252, 252);">
+                            <div class="card-body p-5 text-center">
+                
+                            <app-text-input
+                            [label]="'Amount'"
+                            [formControl]="orderForm.controls['credit']"
+                            [placeholder]="'Enter Amount'"
+                            [type]="'number'"
+                            ></app-text-input>               
+
+                            <app-text-input
+                            [label]="'Account'"
+                            [formControl]="orderForm.controls['account']"
+                            [placeholder]="'Select an account'"
+                            [type]="'select'"
+                            [options]="['Bank', 'Cash', 'MoMo']">
+                            </app-text-input>
+
+                            <app-text-input
+                            [label]="'Description'"
+                            [formControl]="orderForm.controls['description']"
+                            [placeholder]="'Enter Descriptions'"
+                            [type]="'text'"
+                            ></app-text-input>   
+                
+                        <button type="submit" (click)="newOrderForm()" class="btn btn-outline-primary" [disabled]="this.orderForm.invalid" >Order Now</button>
+                                           
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+                </form> 
+        </section>
+    </div>
+  </div>
+
