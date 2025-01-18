@@ -28,7 +28,7 @@ export class IncomesComponent {
     this.transService.postIncome(this.orderForm.value).subscribe({
       next: (response) => {
         if (response) {
-          this.router.navigateByUrl('/incomes');
+          this.router.navigateByUrl('/transactions');
         } else {
           console.warn('Token is missing in response');
         }

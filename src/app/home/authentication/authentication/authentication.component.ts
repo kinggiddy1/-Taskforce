@@ -5,6 +5,7 @@ import { TextInputComponent } from '../../text-input/text-input/text-input.compo
 import { AuthService } from '../../../shared/services/auth.service';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -18,7 +19,7 @@ export class AuthenticationComponent {
 
   isLoginView : boolean = true;
 
-  constructor(private AuthService: AuthService, private router: Router) {}
+  constructor(private AuthService: AuthService, private router: Router,  private toastr: ToastrService) {}
 
   private fb = new FormBuilder();
 
@@ -35,6 +36,7 @@ export class AuthenticationComponent {
         if (response.token) {
           localStorage.setItem('token', response.token);
           this.navigateBasedOnRole(response.token);
+          this.toastr.success('Balance fetched successfully', 'Success');
         } else {
           console.warn('Token is missing in response');
         }
