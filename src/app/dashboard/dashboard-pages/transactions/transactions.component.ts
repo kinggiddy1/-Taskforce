@@ -17,7 +17,6 @@ import { Config } from 'datatables.net';
 export class TransactionsComponent implements OnInit{
 
   transactions: any[] = []; 
-  // dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
  
 
@@ -42,5 +41,4 @@ export class TransactionsComponent implements OnInit{
       });
     }
 
-    ngAfterViewInit(): void { this.dtTrigger.next({}); } ngOnDestroy(): void { this.dtTrigger.unsubscribe(); }
 }
