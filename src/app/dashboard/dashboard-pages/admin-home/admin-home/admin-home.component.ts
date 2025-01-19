@@ -15,20 +15,43 @@ import { ToastrService } from 'ngx-toastr';
 export class AdminHomeComponent implements OnInit {
 
   balance: any;
-  bank: any;
+  bank: any; 
   cash: any;
   momo: any;
   expense: any;
+  limit: any;
+  credit: any;
 
   constructor(private transService: TransService,  private toastr: ToastrService) {} 
 
   ngOnInit(): void {
+
+    this.transService.getLimit().subscribe({
+      next: (data) => {
+        this.limit = data['limitAmount']['limit_amount'];
+        console.log(data)
+      },
+
+      error: (error) => {
+        console.error('Error fetching debit', error);
+      }
+    })
+
       this.transService.getDebit().subscribe({
         next: (data) => {
           this.expense = data['totalDebit'];
-          if(this.expense  >= 40000){
-            this.toastr.warning('You reached your expense Limit', 'Limit');
+          if(this.expense  >= this.limit){
+            this.toastr.warning('You reached your expense Limit', 'Expense Limit');
           }
+        },
+        error: (error) => {
+          console.error('Error fetching debit', error);
+        }
+      })
+
+      this.transService.getCredit().subscribe({
+        next: (data) => {
+          this.credit = data['totalCredit'];
         },
         error: (error) => {
           console.error('Error fetching debit', error);

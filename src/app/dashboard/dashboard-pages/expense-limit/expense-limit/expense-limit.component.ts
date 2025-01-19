@@ -24,11 +24,10 @@ export class ExpenseLimitComponent {
   });
 
   newlimitForm() {
-    console.log('Form Data:', this.limitForm.value);
     this.transService.postLimit(this.limitForm.value).subscribe({
       next: (response) => {
         if (response) {
-          this.toastr.warning('Successfully updated Your montly limit expense', 'Limit update');
+          this.toastr.success('Successfully updated montly limit', 'Expense Limit');
           this.router.navigateByUrl('/orders');
         } else {
           console.warn('Token is missing in response');

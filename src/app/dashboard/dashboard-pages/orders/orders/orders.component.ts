@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TextInputComponent } from '../../../../home/text-input/text-input/text-input.component';
 import { TransService } from '../../../../shared/services/trans.service';
 import { Router, RouterLink } from '@angular/router';
@@ -12,9 +12,25 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })
-export class OrdersComponent {
+export class OrdersComponent implements OnInit{
+
+  limit: any;
 
   constructor(private transService: TransService, private router: Router) {}
+  
+  ngOnInit(): void {
+    this.transService.getLimit().subscribe({
+      next: (data) => {
+        this.limit = data['limitAmount']['limit_amount'];
+        console.log(data)
+      },
+
+      error: (error) => {
+        console.error('Error fetching debit', error);
+      }
+    })
+
+}
 
   private fb = new FormBuilder();
 

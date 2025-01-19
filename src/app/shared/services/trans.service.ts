@@ -26,6 +26,10 @@ export class TransService {
       return this.http.post<any>(this.apiUrl+'totaldebit/', {});
     }
 
+    //get balance
+    getCredit(): Observable<any> {
+      return this.http.post<any>(this.apiUrl+'totalcredit/', {});
+    }
       //get Transactions
     getTransactions(): Observable<any> {
       return this.http.get<any>(this.apiUrl+'transactions/', {});
@@ -56,10 +60,13 @@ export class TransService {
       return this.http.post<any>(this.apiUrl+'credit/', data);
     }
   
-      //Save Income
+      //Save limit
       postLimit(data: any): Observable<any> { 
       return this.http.post<any>(this.apiUrl+'limit/', data);
     }
     
-    
+      //Save Income
+      getLimit(): Observable<any> { 
+      return this.http.get<any>(this.apiUrl+'limitamount/', {});
+    }
 }
