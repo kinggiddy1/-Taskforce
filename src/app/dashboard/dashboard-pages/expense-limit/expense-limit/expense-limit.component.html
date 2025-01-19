@@ -1,1 +1,32 @@
-<p>expense-limit works!</p>
+<div class="card">
+    <div class="card-body">
+         
+          
+        <section class="vh-100">
+            <form [formGroup]="limitForm">
+                <div class="container">
+                    
+                    <div class="row d-flex justify-content-left ">
+                        <div class="col-12 col-md-12 col-lg-8 col-xl-8">
+                            <div class="card shadow-2-strong"
+                                style="border-radius: 1rem; background-color:rgb(252, 252, 252);">
+                                <div class="card-body p-5 text-center">
+
+                                    <app-text-input [label]="'Expense limit'" 
+                                    [formControl]="limitForm.controls['limit_amount']"
+                                    [placeholder]="'Enter Amount'" 
+                                    [type]="'number'">
+                                     </app-text-input>
+                               
+                                    <button type="submit" (click)="newlimitForm()" class="btn btn-outline-primary"
+                                        [disabled]="this.limitForm.invalid">Update Now</button>
+
+                                </div>
+                            </div>
+                        </div>                          
+                    </div>
+                </div>
+
+            </form>
+        </section>
+    </div>

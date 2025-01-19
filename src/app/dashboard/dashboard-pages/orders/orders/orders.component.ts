@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { TextInputComponent } from '../../../../home/text-input/text-input/text-input.component';
 import { TransService } from '../../../../shared/services/trans.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 
 
 @Component({
   selector: 'app-orders',
   standalone: true,
-  imports: [TextInputComponent, ReactiveFormsModule],
+  imports: [TextInputComponent, ReactiveFormsModule, RouterLink],
   templateUrl: './orders.component.html',
   styleUrl: './orders.component.css'
 })

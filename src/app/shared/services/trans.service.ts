@@ -56,5 +56,10 @@ export class TransService {
       return this.http.post<any>(this.apiUrl+'credit/', data);
     }
   
+      //Save Income
+      postLimit(data: any): Observable<any> { 
+      return this.http.post<any>(this.apiUrl+'limit/', data);
+    }
+    
     
 }
