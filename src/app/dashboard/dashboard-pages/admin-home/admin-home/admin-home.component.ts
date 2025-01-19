@@ -37,17 +37,7 @@ export class AdminHomeComponent implements OnInit {
       }
     })
 
-      this.transService.getDebit().subscribe({
-        next: (data) => {
-          this.expense = data['totalDebit'];
-          if(this.expense  >= this.limit){
-            this.toastr.warning('You reached your expense Limit', 'Expense Limit');
-          }
-        },
-        error: (error) => {
-          console.error('Error fetching debit', error);
-        }
-      })
+      
 
       this.transService.getCredit().subscribe({
         next: (data) => {
@@ -67,6 +57,18 @@ export class AdminHomeComponent implements OnInit {
           console.error('Error fetching Balance', error);
         }
       });
+
+      this.transService.getDebit().subscribe({
+        next: (data) => {
+          this.expense = data['totalDebit'];
+          if(this.expense  >= this.limit){
+            this.toastr.warning('You reached your expense Limit', 'Expense Limit');
+          }
+        },
+        error: (error) => {
+          console.error('Error fetching debit', error);
+        }
+      })
 
     this.transService.getBank().subscribe({
       next: (data) => {
