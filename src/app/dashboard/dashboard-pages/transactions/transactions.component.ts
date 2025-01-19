@@ -1,4 +1,4 @@
-import { Component, OnInit ,ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TransService } from '../../../shared/services/trans.service';
 import { CommonModule } from '@angular/common';
 import { DataTablesModule } from 'angular-datatables';
@@ -32,7 +32,6 @@ export class TransactionsComponent implements OnInit{
       
       this.transService.getTransactions().subscribe({
         next: (data) => {
-          console.log(data);
           this.transactions = data.transactions;
           this.dtTrigger.next(null);
         },
