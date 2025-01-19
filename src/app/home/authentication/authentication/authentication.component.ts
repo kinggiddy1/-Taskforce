@@ -36,7 +36,7 @@ export class AuthenticationComponent {
         if (response.token) {
           localStorage.setItem('token', response.token);
           this.navigateBasedOnRole(response.token);
-          this.toastr.success('Balance fetched successfully', 'Success');
+          this.toastr.success('Successfully created an account wait for activation', 'Success');
         } else {
           console.warn('Token is missing in response');
         }

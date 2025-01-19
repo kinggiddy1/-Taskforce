@@ -1,40 +1,9 @@
-<div class="container py-2">
-  <!-- title -->
-  <div class="row g-4">
-    <div class="col-md-6">
-      <div class="card text-center p-4">
-        <div class="icon text-primary">
-        
-        </div>
-        <h5 class="card-title">Totol Income</h5>
-        <h1 class="card-text">
-         {{credit}}
-        </h1>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="card text-center p-4">
-        <div class="icon text-danger">
-         
-        </div>
-        <h5 class="card-title">Total Expenses</h5>
-        <h1 class="card-text">
-          {{expense}}
-        </h1>
-      </div>
-    </div>
-   
-      
-    </div>
-</div>
-
 <div class="container py-5">
-  <!-- title -->
   <div class="row g-4">
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card text-center p-4">
         <div class="icon text-primary">
-
+  
         </div>
         <h5 class="card-title">Totol Balance</h5>
         <h1 class="card-text">
@@ -42,37 +11,73 @@
         </h1>
       </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
       <div class="card text-center p-4">
-        <div class="icon text-danger">
+        <div class="icon text-primary">
 
         </div>
-        <h5 class="card-title">Bank</h5>
+        <h5 class="card-title">Totol Income</h5>
         <h1 class="card-text">
-          {{bank}}
+          {{credit}}
         </h1>
       </div>
     </div>
-    <div class="col-md-3">
-      <div class="card text-center p-4">
-        <div class="icon text-success">
 
-        </div>
-        <h5 class="card-title">Mobile Money</h5>
-        <h1 class="card-text">
-          {{momo}}
-        </h1>
-      </div>
-    </div>
-    <div class="col-md-3">
-      <div class="card text-center p-4">
-        <div class="icon text-success">
-        </div>
-        <h5 class="card-title">Cash</h5>
-        <h1 class="card-text">
-          {{cash}}
-        </h1>
-      </div>
+    <div class="col-md-4">
+    <div class="card text-center p-4">
+      <div class="icon text-danger">
 
+      </div>
+      <h5 class="card-title">Total Expenses</h5>
+      <h1 class="card-text">
+        {{expense}}
+      </h1>
     </div>
   </div>
+
+  
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <div class="icon text-danger">
+
+      </div>
+      <h5 class="card-title">Bank</h5>
+      <h1 class="card-text">
+        {{bank}}
+      </h1>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <div class="icon text-success">
+
+      </div>
+      <h5 class="card-title">Mobile Money</h5>
+      <h1 class="card-text">
+        {{momo}}
+      </h1>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card text-center p-4">
+      <div class="icon text-success">
+      </div>
+      <h5 class="card-title">Cash</h5>
+      <h1 class="card-text">
+        {{cash}}
+      </h1>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- <div style="display: block;">
+    <canvas baseChart
+            [datasets]="barChartData.datasets"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [type]="barChartType">
+    </canvas>
+  </div>
+   -->
