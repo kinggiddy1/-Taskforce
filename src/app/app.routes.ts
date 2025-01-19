@@ -8,6 +8,7 @@ import { authGuard } from './shared/guards/auth.guard';
 import { TransactionsComponent } from './dashboard/dashboard-pages/transactions/transactions.component';
 import { OrdersComponent } from './dashboard/dashboard-pages/orders/orders/orders.component';
 import { IncomesComponent } from './dashboard/dashboard-pages/incomes/incomes/incomes.component';
+import { ExpenseLimitComponent } from './dashboard/dashboard-pages/expense-limit/expense-limit/expense-limit.component';
 
 export const routes: Routes = [
 
@@ -51,6 +52,12 @@ export const routes: Routes = [
           {
             path: 'incomes',
             component: IncomesComponent,
+            canActivate: [authGuard],
+            data: { roles: ['Admin'] },
+          },
+          {
+            path: 'expense-limit',
+            component: ExpenseLimitComponent,
             canActivate: [authGuard],
             data: { roles: ['Admin'] },
           },
