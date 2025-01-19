@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
 
      //Toastr
      provideToastr({positionClass: 'toast-top-center'}),
-
+     importProvidersFrom([BrowserAnimationsModule]),
  
   ]
 };

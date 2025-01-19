@@ -4,6 +4,7 @@ import { ToastrService } from 'ngx-toastr';
 
 
 
+
 @Component({
   selector: 'app-admin-home',
   standalone: true,
@@ -17,21 +18,32 @@ export class AdminHomeComponent implements OnInit {
   bank: any;
   cash: any;
   momo: any;
+  expense: any;
 
-  constructor(private transService: TransService, private toastr: ToastrService) { }
+  constructor(private transService: TransService,  private toastr: ToastrService) {} 
 
   ngOnInit(): void {
+      this.transService.getDebit().subscribe({
+        next: (data) => {
+          this.expense = data['totalDebit'];
+          if(this.expense  >= 40000){
+            this.toastr.warning('You reached your expense Limit', 'Limit');
+          }
+        },
+        error: (error) => {
+          console.error('Error fetching debit', error);
+        }
+      })
+
        this.transService.getBalance().subscribe({
       next: (data) => {
         this.balance = data['Balance'];
-        if (this.balance > 100) {
-          this.toastr.success('Balance fetched successfully', 'Success');
-        }
+
       },
-      error: (error) => {
-        console.error('Error fetching Balance', error);
-      }
-    });
+        error: (error) => {
+          console.error('Error fetching Balance', error);
+        }
+      });
 
     this.transService.getBank().subscribe({
       next: (data) => {
@@ -61,8 +73,5 @@ export class AdminHomeComponent implements OnInit {
     });
 
   }
-
-
-
 
 }
