@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: '/',
+    apiUrl: 'https://api-force-task.thefocalmedia.com/api/',
   };
