@@ -49,7 +49,7 @@ export class AuthService {
 
       //login
     loginUser(data: any): Observable<any> {
-      return this.http.post<any>(this.apiUrl+'login/', data, {headers: this.headers});   
+      return this.http.post<any>(this.apiUrl+'login/', data, {headers: this.headers});  
     }
     
     //protect a router
