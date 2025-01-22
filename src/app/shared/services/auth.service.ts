@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../environments/environments'; 
 import { Observable } from 'rxjs';
 import { TOKEN_KEY } from '../constants/constants';
@@ -13,6 +13,10 @@ import { jwtDecode } from 'jwt-decode';
 })
 export class AuthService {
   private apiUrl = environment.apiUrl; 
+  private headers = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': '*', 
+  });
   
 
   constructor(private http: HttpClient,
@@ -45,7 +49,7 @@ export class AuthService {
 
       //login
     loginUser(data: any): Observable<any> {
-      return this.http.post<any>(this.apiUrl+'login/', data);
+      return this.http.post<any>(this.apiUrl+'login/', data, {headers: this.headers});
     }
     
     //protect a router
