@@ -15,7 +15,6 @@ export class AuthService {
   private apiUrl = environment.apiUrl; 
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': '*', 
   });
   
 
