@@ -11,7 +11,7 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-authentication',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, TextInputComponent],
+  imports: [ReactiveFormsModule, CommonModule, TextInputComponent], 
   templateUrl: './authentication.component.html',
   styleUrl: './authentication.component.css'
 })
