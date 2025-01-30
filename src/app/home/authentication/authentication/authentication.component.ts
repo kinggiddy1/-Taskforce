@@ -46,7 +46,7 @@ export class AuthenticationComponent {
       },
     });
   }
-   
+
 
   loginForm = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
