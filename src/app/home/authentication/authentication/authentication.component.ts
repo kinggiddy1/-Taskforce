@@ -29,7 +29,7 @@ export class AuthenticationComponent {
     password: ['',[Validators.minLength(3), Validators.required]],
     password_confirmation: ['', [Validators.minLength(3), Validators.required]],
   });
-  
+   
   registerUserForm() {
     this.AuthService.registerUser(this.registerForm.value).subscribe({
       next: (response) => {
